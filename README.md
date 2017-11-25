@@ -4,7 +4,7 @@
 **注意事项：带签名的接口，请求头部必须带上两个参数**
 
     _timestamp：当前的时间戳
-    _sign:md5("appkey"+_timestampxxxxx"+"appkey")
+    _sign:md5("xxxxx") //线下沟通
    
    
   
