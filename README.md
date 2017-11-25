@@ -202,7 +202,7 @@
                                 receivename:              收件人      
                                 receivemobile:            收件人手机号 
                                 receiveaddress:           收件地址      
-                                isdefault:                是否设置为默认发票                                                             
+                                isdefault:   Boolean      是否设置为默认发票                                                             
                           返回值：returncode= 0 表示正常
                              {
                                 "message": "",
