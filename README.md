@@ -6,6 +6,8 @@
     _timestamp：当前的时间戳
     _sign:md5("appkey"+_timestampxxxxx"+"appkey")
    
+   
+  
 **所有接口返回格式**
   
     {
@@ -37,7 +39,7 @@
                 "returncode": 0
             }  
             
-    1.2.手机号+验证码+密码 登录
+    1.2.手机号+验证码+密码 登录 （需求签名）
     
        url: /v1/login/reglogin
        参数：
@@ -56,7 +58,7 @@
              
 2.登录 （手机号+密码）（手机号+验证码）
  
-    2.1 手机号+ 密码登录
+    2.1 手机号+ 密码登录 （需求签名）
     
         url: /v1/login/login
         参数：
@@ -81,7 +83,7 @@
 
 4.个人信息接口
 
-    4.1 根据token 获取信息 也可以用于检测token 是否有效
+    4.1 根据token 获取信息 也可以用于检测token 是否有效  （需求签名）
 
         url: /v1/login/checkusertoken
         参数：
@@ -110,7 +112,7 @@
          
 5.退出登录
 
-    5.1 根据token 退出
+    5.1 根据token 退出   （需求签名）
             url: /v1/account/logout
             参数：
                     usertoken: Sting                  // 用户token
@@ -127,7 +129,7 @@
 
     6.1  修改个人信息（头像，手机号，昵称，行业，真实姓名，密码，性别，年龄（下拉）） 
   
-          6.1.1 上传头像 
+          6.1.1 上传头像   （需求签名）
                 url: /v1/account/profile  post
                 参数：
                       file: File                  // 用户token
@@ -138,7 +140,7 @@
                         "result": "http:xxxxx.png",
                         "returncode": 0
                         }
-          6.1.2 修改个人信息，需要修改个人头像，将第一步的地址，赋值               
+          6.1.2 修改个人信息，需要修改个人头像，将第一步的地址，赋值   （需求签名）            
                url: /v1/account/updateAccountinfo
                参数：
                       accesstoken: String                  // 用户token
@@ -161,7 +163,7 @@
     个人 （个人姓名）、公司（纳税人识别号，抬头（公司名称），公司开户行、开户账号，
     					公司地址、公司电话，收件人，收件人手机号、收件人地址）
     					
-    	  6.2.1 获取发票列表
+    	  6.2.1 获取发票列表  （需求签名）
     	        url: /v1/invoice/getList
                 参数：
                       accesstoken: String                  // 用户token                               
@@ -186,7 +188,7 @@
                       }],
                       "returncode": 0
                    }    
-    	  6.2.2 添加发票
+    	  6.2.2 添加发票  （需求签名）
               	        url: /v1/invoice/add
                           参数：
                                 accesstoken: String                  // 用户token  
@@ -207,7 +209,7 @@
                                 "result": null,
                                 "returncode": 0
                              }  
-          6.2.2 添加发票
+          6.2.2 删除发票  （需求签名）
                         url: /v1/invoice/delete
                         参数：
                                 accesstoken: String                  // 用户token 
