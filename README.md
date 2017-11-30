@@ -26,7 +26,7 @@
 
     1.1获取短信验证码（需求签名）
 
-       url: /v1/login/getVerificationCode
+       url: /v1/login/getVerificationCode    POST
        参数：
             mobileNo：String "13000000001"   // 手机号
             appversion：String ""            // app 版本号
@@ -41,7 +41,7 @@
             
     1.2.手机号+验证码+密码 登录 （需求签名）
     
-       url: /v1/login/reglogin
+       url: /v1/login/reglogin              POST
        参数：
             mobileNo：String "13000000001"   // 手机号
             verificationCode：Sting ""       // 验证码
@@ -60,7 +60,7 @@
  
     2.1 手机号+ 密码登录 （需求签名）
     
-        url: /v1/login/login
+        url: /v1/login/login                 POST
         参数：
                 mobileNo：String "13000000001"   // 手机号
                 password: Sting                  // 密码
@@ -86,7 +86,7 @@
 
     4.1 根据token 获取信息 也可以用于检测token 是否有效  （需求签名）
 
-        url: /v1/login/checkusertoken
+        url: /v1/login/checkusertoken           POST
         参数：
                 usertoken: Sting                  // 用户token
                 appversion：String ""            // app 版本号
@@ -114,7 +114,7 @@
 5.退出登录
 
     5.1 根据token 退出   （需求签名）
-            url: /v1/account/logout
+            url: /v1/account/logout         POST
             参数：
                     usertoken: Sting                  // 用户token
                     appversion：String ""            // app 版本号
@@ -131,7 +131,7 @@
     6.1  修改个人信息（头像，手机号，昵称，行业，真实姓名，密码，性别，年龄（下拉）） 
   
           6.1.1 上传头像   （需求签名）
-                url: /v1/account/profile  post
+                url: /v1/account/profile     POST
                 参数：
                       file: File                  // 用户token
                               
@@ -142,7 +142,7 @@
                         "returncode": 0
                         }
           6.1.2 修改个人信息，需要修改个人头像，将第一步的地址，赋值   （需求签名）            
-               url: /v1/account/updateAccountinfo
+               url: /v1/account/updateAccountinfo       POST
                参数：
                       accesstoken: String                  // 用户token
                       realname: String                  // 真实姓名
@@ -165,7 +165,7 @@
     					公司地址、公司电话，收件人，收件人手机号、收件人地址）
     					
     	  6.2.1 获取发票列表  （需求签名）
-    	        url: /v1/invoice/getList
+    	        url: /v1/invoice/getList   GET
                 参数：
                       accesstoken: String                  // 用户token                               
                 返回值：returncode= 0 表示正常
@@ -190,7 +190,7 @@
                       "returncode": 0
                    }    
     	  6.2.2 添加发票  （需求签名）
-              	        url: /v1/invoice/add
+              	        url: /v1/invoice/add        GET
                           参数：
                                 accesstoken: String                  // 用户token  
                                 invoicetype:Integer       发票类型；0 个人 ；1 公司
@@ -211,7 +211,7 @@
                                 "returncode": 0
                              }  
           6.2.2 删除发票  （需求签名）
-                        url: /v1/invoice/delete
+                        url: /v1/invoice/delete         GET
                         参数：
                                 accesstoken: String                  // 用户token 
                                 invoiceId:Long                       // 发票id                                      
