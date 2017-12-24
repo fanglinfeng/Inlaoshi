@@ -222,6 +222,7 @@
                                 } 
 
 7.获取app 首页 Banner 接口
+
         url: /v1/courses/banners        GET
         参数：
             无                                                        
