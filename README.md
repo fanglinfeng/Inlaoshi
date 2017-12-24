@@ -1,6 +1,5 @@
 #app 接口站点
 
-
 **注意事项：带签名的接口，请求头部必须带上两个参数**
 
     _timestamp：当前的时间戳
@@ -220,4 +219,114 @@
                                   "message": "",
                                   "result": null,
                                   "returncode": 0
-                                }                     
+                                } 
+
+7.获取app 首页 Banner 接口
+        url: /v1/courses/banners        GET
+        参数：
+            无                                                        
+        返回值：returncode= 0 表示正常
+             {
+             "returncode": 0,
+             "message": null,
+             "result": [
+                 {
+                     "bannertype": 1, // banner 图片类型 0:图片；1 课程图片；
+                     "bannerurl": "http://39.106.32.142:8080/upload/2d19560b4046944a53d4e26fff2b8268.jpg",
+                     "courseid": 1,   // 课程ID
+                     "sortindex": 0
+                 },
+                 {
+                     "bannertype": 1,
+                     "bannerurl": "http://39.106.140.158:8080/upload/profile/20171202/27cf9745-2151-4a90-909e-7d6b8a7f3f5c.png",
+                     "courseid": 1,
+                     "sortindex": 0
+                 },
+                 {
+                     "bannertype": 0,
+                     "bannerurl": "http://39.106.140.158:8080/upload/profile/20171202/27cf9745-2151-4a90-909e-7d6b8a7f3f5c.png",
+                     "courseid": null,
+                     "sortindex": 0
+                 }
+              ]
+             }
+8.课程接口
+   
+    8.1 获取课程列表接口
+        
+                url: /v1/courses/list       GET
+                参数：
+                    lastCourseId:0 // Long 获取最后一个课程Id                                                        
+                返回值：returncode= 0 表示正常
+                     {
+                     "returncode": 0,
+                     "message": null,
+                     "result": [
+                         {
+                         "id": 1,
+                         "courseName": "课程中文名",
+                         "courseNameEn": "课程英文名",
+                         "courseIntroduce": "<h2>H+ 后台主题</h2>\n <p>\n H+是一个完全响应式，基于Bootstrap3.3.6最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的就jQuery插件，她可以用于所有的Web应用程序，如<b>网站管理后台</b>，<b>网站会员中心</b>，<b>CMS</b>，<b>CRM</b>，<b>OA</b>等等，当然，您也可以对她进行深度定制，以做出更强系统。\n </p>\n <p>\n <b>当前版本：</b>v4.1.0\n </p>\n <p>\n <b>定价：</b><span class=\"label label-warning\">¥988（不开发票）</span>\n </p>",
+                         "courseBrannerImg": "http://39.106.32.142:8080/upload/2d19560b4046944a53d4e26fff2b8268.jpg",
+                         "courseTeacherName": "测试人员",
+                         "courseTeacherEmail": "1@126.com",
+                         "courseTeacherIntroduce": "<h2>H+ 后台主题</h2>\n <p>\n H+是一个完全响应式，基于Bootstrap3.3.6最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的就jQuery插件，她可以用于所有的Web应用程序，如<b>网站管理后台</b>，<b>网站会员中心</b>，<b>CMS</b>，<b>CRM</b>，<b>OA</b>等等，当然，您也可以对她进行深度定制，以做出更强系统。\n </p>",
+                         "courseTeacherId": 0,
+                         "courseType": 0,//课程类型：0 直播 1 视频
+                         "canReview": 1, //是否支持回看 0 ：否 1 ：是
+                         "originalPrice": 100, // 原价
+                         "currentPrice": 80,   //优惠价
+                         "deadlineDays": "2017-12-30 10:29:22"  //观看截止日期
+                         }
+                     ]
+                     }
+    8.2 获取课程明细接口
+       
+                 url: /v1/courses/detail       GET
+                 参数：
+                     courseId:5 // Long 课程Id                                                        
+                 返回值：returncode= 0 表示正常
+                                                  
+                    {
+                    "returncode": 0,
+                    "message": null,
+                    "result": {
+                    "id": 5,
+                    "courseName": "视频课程",
+                    "courseNameEn": "test",
+                    "courseIntroduce": "111111",
+                    "courseBrannerImg": "http://39.106.32.142:8080/upload/2d19560b4046944a53d4e26fff2b8268.jpg",
+                    "courseTeacherName": "qq",
+                    "courseTeacherEmail": "111",
+                    "courseTeacherIntroduce": "111",
+                    "courseTeacherId": 0,
+                    "courseType": 1,
+                    "canReview": 0,
+                    "originalPrice": 100,
+                    "currentPrice": 77,
+                    "deadlineDays": "2017-12-30 10:58:17",
+                    "courseDetail": [
+                        {
+                        "id": 35,
+                        "courseid": 5,
+                        "detailtitle": "1111",
+                        "detailtitleen": "1111",
+                        "publishjson": "",
+                        "rtmpurl": "http://39.106.32.142:8080/upload/7f9b61a7d9913ec87aadc5653c5ec1a8.mp4",
+                        "starttime": "",
+                        "endtime": ""
+                        }
+                    ],
+                    "assistantList": [
+                        {
+                        "id": 17,
+                        "courseid": 5,
+                        "mobile": "1111",
+                        "assistantid": 13
+                        }
+                    ]
+                    }
+                    }
+
+
+                                                   
