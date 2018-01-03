@@ -257,7 +257,8 @@
         
                 url: /v1/courses/list       GET
                 参数：
-                    lastCourseId:0 // Long 获取最后一个课程Id                                                        
+                    lastCourseId:0 // Long 获取最后一个课程Id    
+                    usertoken:"1111" // 当前登录的用户token                                                      
                 返回值：returncode= 0 表示正常
                      {
                      "returncode": 0,
@@ -278,6 +279,7 @@
                          "originalPrice": 100, // 原价
                          "currentPrice": 80,   //优惠价
                          "deadlineDays": "2017-12-30 10:29:22"  //观看截止日期
+                         "haspayed": 0 // 是否已经报名课程 0 未报名 ; >0 已报名
                          }
                      ]
                      }
@@ -285,7 +287,8 @@
        
                  url: /v1/courses/detail       GET
                  参数：
-                     courseId:5 // Long 课程Id                                                        
+                     courseId:5 // Long 课程Id
+                     usertoken:"1111" // 当前登录的用户token                                                        
                  返回值：returncode= 0 表示正常
                                                   
                     {
@@ -315,7 +318,10 @@
                         "publishjson": "",
                         "rtmpurl": "http://39.106.32.142:8080/upload/7f9b61a7d9913ec87aadc5653c5ec1a8.mp4",
                         "starttime": "",
-                        "endtime": ""
+                        "endtime": "",
+                        "livestatus": 0,// 直播状态: 0:待直播; 1:直播中；2：重播
+                        "livevideourl": "",
+                        "livevideoduration": 0
                         }
                     ],
                     "assistantList": [
@@ -329,5 +335,39 @@
                     }
                     }
 
-
-                                                   
+    8.3 获取弹幕消息
+            
+                url: /v1/danmu/list      GET
+                参数：
+                       courseDetailId=41  // 课程下的可节目Id
+                       lastMsgId=0   // Long 最后一个弹幕消息Id                                                      
+                返回值：returncode= 0 表示正常
+                     {
+                     "returncode": 0,
+                     "message": null,
+                     "result": [
+                         {
+                         "id": 1,
+                         "coursedetailid": 41,
+                         "msgtype": 0, // 消息类型：0 文本 1 ：emoji 2 : 图片
+                         "msgcontent": "test",
+                         "accountid": 11,
+                         "realname": "15010082975",
+                         "accounttype": 0, // 弹幕用户类型：0 ：学员 1： 助教 2：老师
+                         "createtime": "2018-01-03 22:29:47"
+                         }
+                     ]
+                     }
+                                           
+     8.4 发送弹幕消息
+     
+                url: /v1/danmu/push      post
+                参数：{
+                     "usertoken":"e69bab07-2a4c-4484-b0f8-1140b674155d", // 登录用户的token
+                     "courseDetailId":41, // 课程下的可节目Id
+                     "msgType":0,  // 消息类型：0 文本 1 ：emoji 2 : 图片
+                     "msgContent":"弹幕内容"
+                   }
+                返回值：returncode= 0 表示正常   
+                                                       
+                   {"returncode":0,"message":"","result":null}                                
