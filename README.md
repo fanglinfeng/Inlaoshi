@@ -370,4 +370,117 @@
                    }
                 返回值：returncode= 0 表示正常   
                                                        
-                   {"returncode":0,"message":"","result":null}                                
+                   {"returncode":0,"message":"","result":null}        
+                   
+
+
+9 订单相关接口
+
+     9.1 提交订单，报名接口
+            
+            url:/v1/courses/submitorder  post
+            参数：
+               {
+                 "usertoken":"0a7540d0-b033-45e6-9979-b26e7243a238",
+                 "courseId":1,
+                 "deviceid":"",
+                 "paySource":"0" // 支付来源 0 微信支付； 1 支付宝支付;
+               }
+            返回值：
+             {
+             "returncode":0,
+             "message":null,
+             "result":{
+                "nonce_str":"",//随机字符串
+                "orderNo":"TC1801072138584276429",//订单编号
+                "orderCreateTime":"2018-01-07 21:38:58",
+                "payStatus":1,//0 待支付; 1 已支付
+                "prepay_id":"" // 微信 预支付交易会话标识 用于app客户端唤起微信支付
+                }
+             }
+     
+     
+     9.2 提交申请开发票接口
+     
+           url:/v1/order/submitinvoice   POST
+           参数
+              {
+                "usertoken":"0a7540d0-b033-45e6-9979-b26e7243a238", // 必填
+                "orderId":2,// 必填
+                "invoicetype":1,// 必填 0：个人 1 ：公司
+                "invoicetitle":"xx 技术科技公司", // 必填 抬头
+                "identification":"xxx", //非必填 纳税人识别号
+                "companybank":"招商银行", //非必填 公司开户行
+                "companycardno":"64410001", //非必填 开户账号
+                "companyaddress":"xx 技术科技公司的办公地址", //非必填 公司地址
+                "companytel":"65420001",//非必填 公司电话
+                "receivename":"张三",// 必填
+                "receivemobile":"18911692574",// 必填
+                "receiveaddress":"北京市海淀区中关村xxx街"// 必填
+              }
+            返回值：
+              {"returncode":0,"message":"","result":null} 
+              
+              
+
+10 我的课程列表
+    
+         url:/v1/courses/getMyCourseList?usertoken=0a7540d0-b033-45e6-9979-b26e7243a238  get
+         返回值：
+             {
+             "returncode": 0,
+             "message": null,
+             "result": {
+                 "validCourses": [   // 有效课程
+                     {
+                     "id": 1,
+                     "courseName": "课程中文名",
+                     "courseNameEn": "课程英文名",
+                     "courseIntroduce": "<h2>H+ 后台主题</h2>\n <p>\n H+是一个完全响应式，基于Bootstrap3.3.6最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的就jQuery插件，她可以用于所有的Web应用程序，如<b>网站管理后台</b>，<b>网站会员中心</b>，<b>CMS</b>，<b>CRM</b>，<b>OA</b>等等，当然，您也可以对她进行深度定制，以做出更强系统。\n </p>\n <p>\n <b>当前版本：</b>v4.1.0\n </p>\n <p>\n <b>定价：</b><span class=\"label label-warning\">¥988（不开发票）</span>\n </p>",
+                     "courseBrannerImg": "http://39.106.32.142/upload/2d19560b4046944a53d4e26fff2b8268.jpg",
+                     "courseTeacherName": "测试人员",
+                     "courseTeacherEmail": "1@126.com",
+                     "courseTeacherIntroduce": "<h2>H+ 后台主题</h2>\n <p>\n H+是一个完全响应式，基于Bootstrap3.3.6最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的就jQuery插件，她可以用于所有的Web应用程序，如<b>网站管理后台</b>，<b>网站会员中心</b>，<b>CMS</b>，<b>CRM</b>，<b>OA</b>等等，当然，您也可以对她进行深度定制，以做出更强系统。\n </p>",
+                     "courseTeacherId": 0,
+                     "courseType": 0,
+                     "canReview": 1,
+                     "originalPrice": 100,
+                     "currentPrice": 0,
+                     "deadlineDays": "2018-12-30 10:29:22",
+                     "createtime": "2017-12-07 23:12:17",
+                     "coursetime": "12月07日",
+                     "ordercnt": 1,
+                     "haspayed": 1
+                     }
+                 ],
+                 "invalidCourses": []  // 过期 无效课程
+                 }
+             }
+    
+
+11. 我的订单列表
+
+        url: /v1/order/list?usertoken=0a7540d0-b033-45e6-9979-b26e7243a238
+        返回值：
+        {
+        "returncode": 0,
+        "message": null,
+        "result": [
+            {
+            "id": 2,
+            "accountid": 10,
+            "courseId": 1,
+            "courseName": "课程中文名",
+            "orderNo": "TC1801072044359437089",
+            "payStatus": 1,
+            "payAmount": 0,
+            "paySource": 0,
+            "paymentTime": "2018-01-07 20:44:36",
+            "needinvoice": 1,
+            "createtime": "2018-01-07 20:44:36",
+            "isvalid": true
+            }
+        ]
+        }
+        
+                                                          
