@@ -354,7 +354,8 @@
                          "accountid": 11,
                          "realname": "15010082975",
                          "accounttype": 0, // 弹幕用户类型：0 ：学员 1： 助教 2：老师
-                         "createtime": "2018-01-03 22:29:47"
+                         "createtime": "2018-01-03 22:29:47",
+                         "avatarurl": "http://39.106.140.158:8080/static/header.png"
                          }
                      ]
                      }
@@ -423,9 +424,9 @@
               
               
 
-10 我的课程列表
+10 我的课程列表(courseType 课程类型：0 直播 1 视频)
     
-         url:/v1/courses/getMyCourseList?usertoken=0a7540d0-b033-45e6-9979-b26e7243a238  get
+         url:/v1/courses/getMyCourseList?usertoken=0a7540d0-b033-45e6-9979-b26e7243a238&courseType=0  get
          返回值：
              {
              "returncode": 0,
