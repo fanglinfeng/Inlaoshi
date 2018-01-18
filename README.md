@@ -451,7 +451,8 @@
                      "createtime": "2017-12-07 23:12:17",
                      "coursetime": "12月07日",
                      "ordercnt": 1,
-                     "haspayed": 1
+                     "haspayed": 1,
+                     "detailCourseCnt": 1
                      }
                  ],
                  "invalidCourses": []  // 过期 无效课程
