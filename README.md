@@ -268,11 +268,9 @@
                          "id": 1,
                          "courseName": "课程中文名",
                          "courseNameEn": "课程英文名",
-                         "courseIntroduce": "<h2>H+ 后台主题</h2>\n <p>\n H+是一个完全响应式，基于Bootstrap3.3.6最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的就jQuery插件，她可以用于所有的Web应用程序，如<b>网站管理后台</b>，<b>网站会员中心</b>，<b>CMS</b>，<b>CRM</b>，<b>OA</b>等等，当然，您也可以对她进行深度定制，以做出更强系统。\n </p>\n <p>\n <b>当前版本：</b>v4.1.0\n </p>\n <p>\n <b>定价：</b><span class=\"label label-warning\">¥988（不开发票）</span>\n </p>",
                          "courseBrannerImg": "http://39.106.32.142:8080/upload/2d19560b4046944a53d4e26fff2b8268.jpg",
                          "courseTeacherName": "测试人员",
                          "courseTeacherEmail": "1@126.com",
-                         "courseTeacherIntroduce": "<h2>H+ 后台主题</h2>\n <p>\n H+是一个完全响应式，基于Bootstrap3.3.6最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的就jQuery插件，她可以用于所有的Web应用程序，如<b>网站管理后台</b>，<b>网站会员中心</b>，<b>CMS</b>，<b>CRM</b>，<b>OA</b>等等，当然，您也可以对她进行深度定制，以做出更强系统。\n </p>",
                          "courseTeacherId": 0,
                          "courseType": 0,//课程类型：0 直播 1 视频
                          "canReview": 1, //是否支持回看 0 ：否 1 ：是
@@ -437,11 +435,9 @@
                      "id": 1,
                      "courseName": "课程中文名",
                      "courseNameEn": "课程英文名",
-                     "courseIntroduce": "<h2>H+ 后台主题</h2>\n <p>\n H+是一个完全响应式，基于Bootstrap3.3.6最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的就jQuery插件，她可以用于所有的Web应用程序，如<b>网站管理后台</b>，<b>网站会员中心</b>，<b>CMS</b>，<b>CRM</b>，<b>OA</b>等等，当然，您也可以对她进行深度定制，以做出更强系统。\n </p>\n <p>\n <b>当前版本：</b>v4.1.0\n </p>\n <p>\n <b>定价：</b><span class=\"label label-warning\">¥988（不开发票）</span>\n </p>",
                      "courseBrannerImg": "http://39.106.32.142/upload/2d19560b4046944a53d4e26fff2b8268.jpg",
                      "courseTeacherName": "测试人员",
                      "courseTeacherEmail": "1@126.com",
-                     "courseTeacherIntroduce": "<h2>H+ 后台主题</h2>\n <p>\n H+是一个完全响应式，基于Bootstrap3.3.6最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术，她提供了诸多的强大的可以重新组合的UI组件，并集成了最新的jQuery版本(v2.1.1)，当然，也集成了很多功能强大，用途广泛的就jQuery插件，她可以用于所有的Web应用程序，如<b>网站管理后台</b>，<b>网站会员中心</b>，<b>CMS</b>，<b>CRM</b>，<b>OA</b>等等，当然，您也可以对她进行深度定制，以做出更强系统。\n </p>",
                      "courseTeacherId": 0,
                      "courseType": 0,
                      "canReview": 1,
