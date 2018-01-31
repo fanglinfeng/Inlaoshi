@@ -408,7 +408,7 @@
                  }
              }
      
-     9.2 提交订单，报名接口
+     9.2 检查课程是否支付完成
                  
                  url:/v1/courses/checkPayStatus  post
                  参数：
