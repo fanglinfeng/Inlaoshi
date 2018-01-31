@@ -387,19 +387,43 @@
                }
             返回值：
              {
-             "returncode":0,
-             "message":null,
-             "result":{
-                "nonce_str":"",//随机字符串
-                "orderNo":"TC1801072138584276429",//订单编号
-                "orderCreateTime":"2018-01-07 21:38:58",
-                "payStatus":1,//0 待支付; 1 已支付
-                "prepay_id":"" // 微信 预支付交易会话标识 用于app客户端唤起微信支付
-                }
+             "returncode": 0,
+             "message": null,
+             "result": {
+                 "payparameters": {    
+                     "appid": "wxeb7da4aae376473b",
+                     "noncestr": "QgnTmUD7pLweRWYX9jOy",
+                     "package": "Sign=WXPay",
+                     "partnerid": "1497852482",
+                     "prepayid": "wx20180131195405ed7fb41bb90679644281",
+                     "return_code": "SUCCESS",// SUCCESS, FAIL 是由当SUCCESS才唤起微信支付，其他给出提示，提示消息 return_msg
+                     "return_msg": "OK", 
+                     "sign": "FA1A7325643251E1AE5BF8D1AE9BA2F7",
+                     "timestamp": "1517399645"
+                     },
+                 "orderNo": "TC201801311954050405505",
+                 "orderCreateTime": "2018-01-31 19:54:05",
+                 "paySource": 0, //支付来源 0 微信支付； 1 支付宝支付;
+                 "payStatus": 0  //付费状态0  待支付; 1 已支付
+                 }
              }
      
+     9.2 提交订单，报名接口
+                 
+                 url:/v1/courses/checkPayStatus  post
+                 参数：
+                    {
+                      "usertoken":"0a7540d0-b033-45e6-9979-b26e7243a238",
+                      "courseId":1,
+                      "deviceid":""
+                    }
+                 返回值：
+                  {
+                  "returncode": 0,  // 仅当returncode==0 是已经付费
+                  "message": "您已经支付成功"
+                  }
      
-     9.2 提交申请开发票接口
+     9.3 提交申请开发票接口
      
            url:/v1/order/submitinvoice   POST
            参数
@@ -456,7 +480,7 @@
              }
     
 
-11. 我的订单列表
+    11. 我的订单列表
 
         url: /v1/order/list?usertoken=0a7540d0-b033-45e6-9979-b26e7243a238
         返回值：
@@ -480,5 +504,26 @@
             }
         ]
         }
+     
+     
+    12. 获取直播课程的直播状态
+    
+     url:/v1/courses/getLiveStatus?courseId=12&detailId=51
+      返回值：
+    {
+        "returncode": 0,
+        "message": null,
+        "result": {
+        "startAt": 1516450831,
+        "clientIP": "122.70.145.87:37524",
+        "bps": 2714424,
+        "fps": {
+            "audio": 42,
+            "video": 29,
+            "data": 0
+        }
+    }
+    }
+
         
                                                           
