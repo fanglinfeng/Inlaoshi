@@ -419,8 +419,12 @@
                     }
                  返回值：
                   {
-                  "returncode": 0,  // 仅当returncode==0 是已经付费
-                  "message": "您已经支付成功"
+                      "returncode": 0,
+                      "message": "您已经支付成功",
+                      "result": {
+                          "courseNotify": "万法归宗之英语语法速成进阶第一节课在2018年02月02日 17:20，可以通过手机APP-我的课程中进入教室学习哦~",
+                          "payamount": 1
+                      }
                   }
      
      9.3 提交申请开发票接口
