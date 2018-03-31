@@ -528,6 +528,40 @@
         }
     }
     }
-
-        
+    
+    13.检查订单是否报名：
+    
+       url :/v1/courses/checkPayed?courseId=8&usertoken=486c1ac0-01c5-4e15-ab67-fc638c7725ef
+       返回值：
+        {
+        "returncode": 200,
+        "message": "课程未报名",
+        "result": null
+        }
+        或是
+        {
+        "returncode": 0,
+        "message": "课程已经报名",
+        "result": {
+            "id": 2,
+            "accountid": 10,
+            "usertoken": "0a7540d0-b033-45e6-9979-b26e7243a238",
+            "courseid": 1,
+            "coursename": "课程中文名",
+            "courseBrannerImg": "http://39.106.32.142/upload/2d19560b4046944a53d4e26fff2b8268.jpg",
+            "orderno": "TC1801072044359437089",
+            "paystatus": 1,
+            "payamount": 0,
+            "paysource": 0,
+            "payserialno": "",
+            "paymenttime": "2018-01-07 20:44:36",
+            "status": 0,
+            "needinvoice": 1,
+            "invoiceId": 3,
+            "createtime": "2018-01-07 20:44:36",
+            "lastmodifytime": "2018-01-07 21:30:57",
+            "paysourcestr": "微信支付",
+            "paystatusstr": "已支付"
+         }
+        }
                                                           
