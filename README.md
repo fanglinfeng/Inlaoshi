@@ -544,4 +544,37 @@
         "message": "课程已经报名",
         "result": 1
         }
-                                                          
+    
+    14.app检查升级
+      url:/home/checkAppUpgrading?appId=app.android&appVersion=0.0.1 
+      返回值：
+      {
+      "returncode": 0,
+      "message": null,
+      "result": {
+          "id": 1,
+          "appid": "app.android",//app.ios
+          "appversion": "0.0.2",
+          "ismustupgrading": 1,
+          "upgradingdesc": "xxxx",
+          "upgradingurl": "apk或是ipa 升级地址",
+          "createuserid": 0,
+          "createtime": "2018-04-23 21:01:22",
+          "lastmodifyuserid": 0,
+          "lastmodifytime": "2018-04-23 21:01:22",
+          "auditingversion": ""
+          }
+      }  
+      
+      15.修改订单状态
+      url:/v1/order/setorderpayed?orderNo=订单号&paySerialNo=流水号&_appId=app.ios&_timestamp=xxx&_sign=xxx
+     
+      1.[orderNo,paySerialNo,_appId,_timestamp] 排序
+      2.orderNo=订单号&paySerialNo=流水号&_appId=xx&_timestamp=xxx
+      3._sign=md5("appkey"+"orderNo=订单号&paySerialNo=流水号&_appId=xx&_timestamp=xxx"+"appkey")  appkey:线下发
+      返回值：
+          {
+                 "returncode": 0,
+                 "message": null,
+                 "result": null
+          }                                              
