@@ -567,11 +567,11 @@
       }  
       
       15.修改订单状态
-      url:/v1/order/setorderpayed?orderNo=订单号&paySerialNo=流水号&_appId=app.ios&_timestamp=xxx&_sign=xxx
+      url:/v1/order/setorderpayed?orderNo=订单号&paySerialNo=流水号&receipt=xxx&_appId=app.ios&_timestamp=xxx&_sign=xxx
      
-      1.[orderNo,paySerialNo,_appId,_timestamp] 排序
-      2.orderNo=订单号&paySerialNo=流水号&_appId=xx&_timestamp=xxx
-      3._sign=md5("appkey"+"orderNo=订单号&paySerialNo=流水号&_appId=xx&_timestamp=xxx"+"appkey")  appkey:线下发
+      1.[orderNo,paySerialNo,receipt,_appId,_timestamp] 排序
+      2.orderNo=订单号&paySerialNo=流水号&receipt=xx&_appId=xx&_timestamp=xxx
+      3._sign=md5("appkey"+"_appId=xx_timestamp=xxxorderNo=订单号paySerialNo=流水号receipt=xx"+"appkey")  appkey:线下发
       返回值：
           {
                  "returncode": 0,
