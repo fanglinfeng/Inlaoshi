@@ -335,7 +335,7 @@
 
     8.3 获取弹幕消息
             
-                url: /v1/danmu/list      GET
+                url: /v1/danmu/list      GET （弹幕下翻接口，弹幕数据顺序接口）
                 参数：
                        courseDetailId=41  // 课程下的可节目Id
                        lastMsgId=0   // Long 最后一个弹幕消息Id                                                      
@@ -357,6 +357,29 @@
                          }
                      ]
                      }
+                     
+                  url: /v1/danmu/listBefore      GET ( 弹幕上翻接口，进入弹幕页lastMsgId=0 或是null 取最后20条，倒序，每次根据lastMsgId在往上取20条)
+                                 参数：
+                                        courseDetailId=41  // 课程下的可节目Id
+                                        lastMsgId=0   // Long 最后一个弹幕消息Id                                                      
+                                 返回值：returncode= 0 表示正常
+                                      {
+                                      "returncode": 0,
+                                      "message": null,
+                                      "result": [
+                                          {
+                                          "id": 1,
+                                          "coursedetailid": 41,
+                                          "msgtype": 0, // 消息类型：0 文本 1 ：emoji 2 : 图片
+                                          "msgcontent": "test",
+                                          "accountid": 11,
+                                          "realname": "15010082975",
+                                          "accounttype": 0, // 弹幕用户类型：0 ：学员 1： 助教 2：老师
+                                          "createtime": "2018-01-03 22:29:47",
+                                          "avatarurl": "http://39.106.140.158:8080/static/header.png"
+                                          }
+                                      ]
+                  }
                                            
      8.4 发送弹幕消息
      
